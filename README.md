@@ -5,9 +5,7 @@
 
 Hangman command-line (CLI) game using constructor functions.
 
-## Instructions
-
-The completed game should meet the following criteria:
+The completed game meets the following criteria:
 
 1. Receives user input using the`inquirer npm` package.
 
@@ -17,15 +15,16 @@ The completed game should meet the following criteria:
 
   * **Letter**: Each letter object either display an underlying character, or a blank placeholder (such as an underscore), depending on whether or not the user has guessed the letter. 
 
-3. The user's remaining guesses are tracked and the user is prompted if they would like to end the game when no guesses remain.
+3. The user's remaining guesses are tracked and shown to the user on each guess.
 
-4. Each constructor function is in it's own file; exported and required where needed.
+4. The user is prompted if they would like to end the game when they've run out of guesses.
+
+5. Each constructor function is in it's own file; exported and required when/where needed.
 
 
 - - -
 
-### Notes
-
+### Dependencies
 
 * See `package.json` file containing project dependencies
 
