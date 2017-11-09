@@ -1,0 +1,24 @@
+{
+  "name": "advanced-javascript",
+  "version": "1.0.0",
+  "description": "CLI App",
+  "main": "main.js",
+  "dependencies": {
+    "inquirer": "^5.5.1",
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rescarra/advanced-javascript.git"
+  },
+  "author": "Ryn Escarra-Cypher",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rescarra/advanced-javascript/issues"
+  },
+  "homepage": "https://github.com/rescarra/advanced-javascript#readme",
+  "keywords": []
+}
