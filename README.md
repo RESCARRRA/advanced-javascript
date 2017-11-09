@@ -21,10 +21,23 @@ The completed game meets the following criteria:
 
 5. Each constructor function is in it's own file; exported and required when/where needed.
 
+- - -
+## Getting Started
+
+1. Clone repo
+
+2. Run 'npm install'
+
+3. Run command 'node main.js' to play.
 
 - - -
-
 ### Dependencies
 
-* See `package.json` file containing project dependencies
+* [Node.js](https://nodejs.org/en/) Download the latest version of Node 
+
+* [Inquirer](https://github.com/SBoudrias/Inquirer.js) Inquirer npm
+
+  * See `package.json`
+
+
 
