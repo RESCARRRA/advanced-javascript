@@ -7,9 +7,6 @@ exports.letter;
 
 // startGame();
 
-var userWord = new Wrd.Wrd(game.chosenWord);
-var guessLimit = 10;
-
 // // Option to Start or End game
 // // -----------------------------------------------------------------------------
 
@@ -25,13 +22,15 @@ var guessLimit = 10;
 
 
 
+var userWord = new Wrd.Wrd(game.chosenWord);
+var guessLimit = 10;
 
 // Game Start: Prompt user for letter/guess
 //-----------------------------------------------------------------------------
-function userGuess(){
-		console.log("");
-		console.log("");
-		console.log("");
+// function userGuess(){
+console.log("");
+console.log("");
+console.log("");
 		console.log("~~~~~~~~********************************~~~~~~~~\n");
 		console.log("\n" + 
 		" . . . .-. .   .-. .-. .  . .-.   .-. .-.   \n"+
@@ -48,43 +47,35 @@ function userGuess(){
 		  "\n   ....or me after this weeeeeeekkkkkk!!!! j/k :/ "
 		);
 		console.log("~~~~~~~~********************************~~~~~~~~\n");
-		console.log("To begin, follow the prompts below. You can quit at anytime by typing [ QUIT ].");
-		console.log("");
-		console.log("");
-	// gamePrompt();
-		// userGuess();
+console.log(
+	"To begin, follow the prompts below. You can quit at anytime by typing [ QUIT ]."
+);
+console.log("");
+console.log("");
+// gamePrompt();
+userGuess();
+
+function userGuess() {
 	console.log(userWord.toString());
-	if (userWord.guesses.length >= guessLimit){
-		console.log('Blërg!! You ran out of guesses! The mystery word was ' + chosenWord + '. GAME OVER!!!');
+	if (userWord.guesses.length >= guessLimit) {
+		console.log('Blërg!! You ran out of guesses! The mystery word was ' +
+			chosenWord + '. GAME OVER!!!');
 		gamePrompt();
 	}
 	inquirer.prompt([{
-		name: 'letter',
-		type: 'text',
-		message: 'Guess a letter: ',
-		validate: function(value) {
-			return value !== ' ' && value.length == 1 && value.typeof !== "";
-		}
-		// validate: function (value){
-		//    	if( value !== ' ' && value.length == 1 && value.typeof !== "")
-		//    		return;
-		//   	}
-
-		// validate: function(value) {
-		// 		if (isNaN(value) === true) {
-		// 			return false;
-		//      }
-		// 			return true;
-		//      }
-
-	}]).then(function(answers){
-		var letter = answers.letter;  
-
-		userWord.checkAgainst(letter);
-		console.log("");
-		
-		if(userWord.renderWord()){
-			console.log('Correct! The answer was ' + userWord.toString() + '! You won!'+
+			name: 'letter',
+			type: 'text',
+			message: 'Guess a letter: ',
+			validate: function(value) {
+				return value !== ' ' && value.length == 1 && value.typeof !== "";
+			}
+		}]).then(function(answers) {
+				var letter = answers.letter;
+				userWord.checkAgainst(letter);
+				console.log("");
+				if (userWord.renderWord()) {
+					console.log('Correct! The answer was ' + userWord.toString() +
+							'! You won!' +
 		
 			"\n"+					
 			"/**   *  /**      /**      /**/*    /**\n"+
@@ -99,36 +90,30 @@ function userGuess(){
 			return;
 
 		}
-		console.log('<><><><><><><><><><><><><><><><><><><><><>\n');
-		console.log('You have ' + (guessLimit - userWord.guesses.length) + ' guesses remaining.');
-		console.log("");
-		gamePrompt();
-		userGuess();
-		}
-	);
-}
-userGuess();
+	console.log('<><><><><><><><><><><><><><><><><><><><><>\n');
+	console.log('You have ' + (guessLimit - userWord.guesses.length) +
+		' guesses remaining.');
+	console.log("");
+	// gamePrompt();
+	userGuess();
+	});
+	}
 
-function gamePrompt() {
-  inquirer.prompt([{
-      name: "play",
-      type: "input",
-      message: 'Too bad! Byyeee!'
-      // default: ['y']
-    }])
-    .then(function(answer) {
-      // based on their answer, either call the start or the end functions
-  //  	if (answer.play = 'no'){
-		// process.exit();
-  //  	};
-	if (answer.play === 'QUIT'){
-		process.exit();
-   	}
-  });
-};
-// gamePrompt();
-
-// function gameOver(){
-// 	console.log('Sad to see you go! Until next time!!!');
-// 	process.exit();
-// 	stop();
+	function gamePrompt() {
+		inquirer.prompt([{
+			name: "play",
+			type: "confirm",
+			message: 'Qui?'
+			// default: ['y']
+		}]).then(function(answer) {
+			// based on their answer, either call the start or the end functions
+			//  	if (answer.play = 'no'){
+			// process.exit();
+			//  	};
+			if (answer.play === 'y') {
+				console.log("Too bad! Byyeee!");
+				process.exit();
+			}
+		});
+	};
+	// gamePrompt();
