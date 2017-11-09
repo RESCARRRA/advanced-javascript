@@ -22,7 +22,7 @@ The completed game meets the following criteria:
 5. Each constructor function is in it's own file; exported and required when/where needed.
 
 - - -
-## Getting Started
+### Getting Started
 
 1. Clone repo
 
