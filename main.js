@@ -48,12 +48,12 @@ console.log("");
 		);
 		console.log("~~~~~~~~********************************~~~~~~~~\n");
 console.log(
-	"To begin, follow the prompts below. You can quit at anytime by typing [ QUIT ]."
+	"To begin, follow the prompts below."
 );
 console.log("");
 console.log("");
 // gamePrompt();
-userGuess();
+// userGuess();
 
 function userGuess() {
 	console.log(userWord.toString());
@@ -103,17 +103,24 @@ function userGuess() {
 		inquirer.prompt([{
 			name: "play",
 			type: "confirm",
-			message: 'Qui?'
+			message: 'Quit?'
 			// default: ['y']
 		}]).then(function(answer) {
 			// based on their answer, either call the start or the end functions
 			//  	if (answer.play = 'no'){
 			// process.exit();
 			//  	};
-			if (answer.play === 'y') {
-				console.log("Too bad! Byyeee!");
+			if (answer.play) {
+			// 	chosenWord = game.chosenWord;
+			// 	userWord = new Wrd.Wrd(game.chosenWord);
+			// 	guessLimit = 10;
+			// 	userGuess();
+			// }
+			// else{
+
+				console.log("Aww,too bad! Until next time!!! Byyeee!");
 				process.exit();
 			}
 		});
 	};
-	// gamePrompt();
+userGuess();
